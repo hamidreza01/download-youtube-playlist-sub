@@ -10,8 +10,16 @@ const sleep = async (m) =>{
 }
 const main = async () => {
     const list = await yt("PLybg94GvOJ9FoGQeUMFZ4SWZsr30jlUYK");
-    list.videos = list.videos.slice(163);
-
+    console.log(list.videos)
+    list.videos = list.videos.slice(164);
+    const fileList = await fs.readdir("./subs",(err,files)=>{
+        files.forEach(v=>{
+            console.log(v)
+            list.videos = list.videos.filter(x => v.includes(x.url));
+        })
+    })
+    console.log(list.videos)
+    return
     const b = await p.launch();
     const page = await b.newPage();
     await page.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36")
