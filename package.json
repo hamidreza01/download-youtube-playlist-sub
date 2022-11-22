@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "download": "^8.0.0",
+    "i": "^0.3.7",
+    "npm": "^9.1.2",
+    "puppeteer": "^19.2.2",
+    "youtube-playlist": "^1.0.4",
+    "ytfps": "^1.1.0"
+  }
+}
